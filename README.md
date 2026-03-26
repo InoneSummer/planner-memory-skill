@@ -4,6 +4,20 @@
 
 It creates and maintains a `planner/` folder inside a project, keeps markdown as the source of truth, and distills planning context into a dated markdown + HTML pair that can later support implementation, evaluation, demos, and presentations.
 
+## Quick Start
+
+1. Install the skill into your Codex or Claude skills directory.
+2. Start a new session and call the skill explicitly.
+3. When returning later, load the existing `planner/` folder first and continue from that state.
+
+```text
+$planner-memory Capture this project planning discussion into planner files and generate the distill md/html pair.
+```
+
+```text
+$planner-memory Read this project's existing planner folder, summarize the current state, and continue the discussion from there.
+```
+
 ## Why This Exists
 
 Most planning context disappears into chat history, meeting notes, or the context window of a single agent session. That is painful when:
