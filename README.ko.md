@@ -189,6 +189,22 @@ Codex나 Claude에서 이렇게 명시 호출하면 됩니다.
 $planner-memory 이 프로젝트의 기획 대화를 planner 파일로 정리하고 distill md/html 한 쌍까지 만들어줘
 ```
 
+특히 유용한 패턴은, 새 세션을 시작할 때 기존 planner 상태를 먼저 읽게 만드는 것입니다.
+
+### 새 세션에서 이어갈 때
+
+새 채팅이나 새 에이전트 세션에서 같은 프로젝트를 이어가려면 이렇게 시작하는 것이 좋습니다.
+
+```text
+$planner-memory 이 프로젝트의 기존 planner 폴더를 읽고 현재 상태를 요약한 뒤, 그 맥락으로 논의를 이어가자
+```
+
+구체적인 프로젝트 예시:
+
+```text
+$planner-memory shopping/planner를 읽고 agent shopping 프로젝트의 현재 상태를 요약한 뒤, 아키텍처 논의를 이어가자
+```
+
 예시:
 
 ```text

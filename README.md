@@ -189,6 +189,22 @@ In Codex or Claude, call the skill explicitly:
 $planner-memory Capture this project planning discussion into planner files and generate the distill md/html pair.
 ```
 
+A particularly useful pattern is starting a fresh session by asking the skill to load the existing planner state first.
+
+### Continuing In A New Session
+
+If you are returning to a project in a new chat or agent session, start like this:
+
+```text
+$planner-memory Read this project's existing planner folder, summarize the current state, and continue the discussion from there.
+```
+
+For a concrete project example:
+
+```text
+$planner-memory Read shopping/planner, summarize the current state of the agent shopping project, and continue the architecture discussion.
+```
+
 Examples:
 
 ```text
