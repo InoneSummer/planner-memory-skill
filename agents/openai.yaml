@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planner Memory"
+  short_description: "Capture and distill shared project planning context"
+  default_prompt: "Use $planner-memory to organize this project's planning context into a shared planner folder with metadata-rich markdown files and a dated distilled markdown and HTML summary that planner, producer, and evaluator can all reuse."

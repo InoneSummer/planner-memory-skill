@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planner Distill</title>
+  <style>
+    :root {
+      --bg: #f7f1e8;
+      --ink: #1d1d1b;
+      --muted: #5f5a52;
+      --panel: rgba(255, 252, 246, 0.92);
+      --line: rgba(29, 29, 27, 0.12);
+      --accent-a: #cc5a2f;
+      --accent-b: #1f5c52;
+      --accent-c: #d9a441;
+      --shadow: 0 18px 50px rgba(29, 29, 27, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(204, 90, 47, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(31, 92, 82, 0.14), transparent 26%),
+        linear-gradient(180deg, #fbf7f2 0%, var(--bg) 100%);
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 28px 80px;
+    }
+
+    .hero, .section, .rail-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      border-radius: 28px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(31, 92, 82, 0.1);
+      color: var(--accent-b);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 0.95;
+    }
+
+    .lede {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .section {
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.75;
+    }
+
+    .rail {
+      display: grid;
+      gap: 16px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .rail-card {
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .rail-card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(217, 164, 65, 0.14);
+      color: #8a5d00;
+    }
+
+    .accent-a { border-left: 6px solid var(--accent-a); }
+    .accent-b { border-left: 6px solid var(--accent-b); }
+    .accent-c { border-left: 6px solid var(--accent-c); }
+
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .rail {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Planner Distill</div>
+      <h1>{{TITLE}}</h1>
+      <p class="lede">{{SUMMARY}}</p>
+      <div class="pill-row">
+        <span class="pill">{{PROJECT}}</span>
+        <span class="pill">{{DATE}}</span>
+        <span class="pill">planner / producer / evaluator</span>
+      </div>
+    </section>
+
+    <div class="layout">
+      <div class="stack">
+        <section class="section accent-a">
+          <h2>Stable Principles</h2>
+          {{STABLE_PRINCIPLES}}
+        </section>
+        <section class="section accent-b">
+          <h2>Recent Shifts</h2>
+          {{RECENT_SHIFTS}}
+        </section>
+        <section class="section accent-c">
+          <h2>Open Tensions</h2>
+          {{OPEN_TENSIONS}}
+        </section>
+        <section class="section accent-b">
+          <h2>Producer Implications</h2>
+          {{PRODUCER_IMPLICATIONS}}
+        </section>
+        <section class="section accent-a">
+          <h2>Evaluator Implications</h2>
+          {{EVALUATOR_IMPLICATIONS}}
+        </section>
+        <section class="section accent-c">
+          <h2>Presentation Angles</h2>
+          {{PRESENTATION_ANGLES}}
+        </section>
+      </div>
+
+      <aside class="rail">
+        <section class="rail-card">
+          <h3>What This Is For</h3>
+          <div class="meta">{{SIDE_SUMMARY}}</div>
+        </section>
+        <section class="rail-card">
+          <h3>Suggested Next Records</h3>
+          {{NEXT_RECORDS}}
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
