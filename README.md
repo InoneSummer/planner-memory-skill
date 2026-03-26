@@ -18,7 +18,7 @@ $planner-memory Capture this project planning discussion into planner files and 
 $planner-memory Read this project's existing planner folder, summarize the current state, and continue the discussion from there.
 ```
 
-## Why This Exists
+## Why I Made This
 
 Most planning context disappears into chat history, meeting notes, or the context window of a single agent session. That is painful when:
 
