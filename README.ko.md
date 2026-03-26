@@ -141,7 +141,7 @@ planner-memory-skill/
 먼저 저장소를 clone합니다.
 
 ```bash
-git clone https://github.com/<your-account>/planner-memory-skill.git
+git clone https://github.com/InoneSummer/planner-memory-skill.git
 cd planner-memory-skill
 ```
 
@@ -234,22 +234,3 @@ python .\tests\test_validate_planner_tree.py
 - planner 기록이 나중에 producer와 evaluator의 작업에도 도움이 되어야 한다
 - 하나의 프로젝트가 거대한 단일 markdown 파일로 붕괴하면 안 된다
 - 검증 가능한 deterministic script가 있어야 한다
-
-## GitHub에 올릴 때 권장 흐름
-
-이 스킬만 독립 저장소로 올리고 싶다면:
-
-```bash
-git init
-git add .
-git commit -m "Initial release: planner-memory skill"
-gh repo create planner-memory-skill --public --source=. --remote=origin --push
-```
-
-비공개 저장소로 올리고 싶다면 `--public` 대신 `--private`를 쓰면 됩니다.
-
-## 메모
-
-- 이 저장소는 의도적으로 스킬과 지원 파일만 포함합니다.
-- 프로젝트별 planner 데이터는 포함하지 않습니다.
-- 공개 배포 시 재사용 조건을 명확히 하려면 LICENSE 파일을 추가하는 것을 권장합니다.

@@ -141,7 +141,7 @@ planner-memory-skill/
 Clone the repository first:
 
 ```bash
-git clone https://github.com/<your-account>/planner-memory-skill.git
+git clone https://github.com/InoneSummer/planner-memory-skill.git
 cd planner-memory-skill
 ```
 
@@ -234,22 +234,3 @@ This skill was built to balance a few competing needs:
 - planning memory should help later implementation and evaluation work
 - a single project should not collapse all thinking into one giant markdown file
 - the system should still be deterministic enough to validate with a script
-
-## Recommended Publishing Flow
-
-If you want to publish this skill as a standalone repository:
-
-```bash
-git init
-git add .
-git commit -m "Initial release: planner-memory skill"
-gh repo create planner-memory-skill --public --source=. --remote=origin --push
-```
-
-If you prefer a private repository, change `--public` to `--private`.
-
-## Notes
-
-- This repository intentionally contains only the skill and its support files.
-- It does not include project-specific planner data.
-- Add a license before public release if you want to define reuse terms clearly.
